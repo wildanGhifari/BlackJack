@@ -5,9 +5,13 @@ let sum = firstCard + secondCard
 let hasBlackjack = false
 let isAlive = true
 let message = ""
+let messageEl = document.getElementById("message-el")
+let sumEl = document.getElementById("sum-el")
+
 
 
 function startGame(){
+    sumEl.textContent += " " + sum
     if (sum < 21) {
         message = "Do you want to draw a new card?"
     } else if (sum === 21) {
@@ -18,5 +22,5 @@ function startGame(){
         isAlive = false
     }
     
-    console.log(message)
+    messageEl.textContent = message
 }
