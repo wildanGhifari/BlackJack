@@ -10,9 +10,13 @@ let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
 
 
-function startGame(){
-    cardsEl.textContent += " " + firstCard + " " + secondCard
-    sumEl.textContent += " " + sum
+function startGame() {
+    renderGame()
+}
+
+function renderGame(){
+    cardsEl.textContent = "Cards: " + firstCard + " " + secondCard
+    sumEl.textContent = "Sum: " + sum
 
     // Set condition if sum less than 21 or exactly equal 21 or greater than 21.
     if (sum < 21) {
@@ -29,5 +33,8 @@ function startGame(){
 }
 
 function newCard() {
-    console.log("Drawing a new card!")
+    let card = 9
+    sum += card
+
+    renderGame()
 }
