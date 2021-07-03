@@ -65,6 +65,6 @@ button {
     color: gold;
 }
 
-#new-card {
+#new-card, #restart {
   display: none;
 }

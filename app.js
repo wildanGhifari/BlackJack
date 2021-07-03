@@ -10,6 +10,7 @@ let cardsEl = document.getElementById("cards-el")
 let playerEl = document.getElementById("player-el")
 let btnStart = document.getElementById("start-game")
 let btnNewCard = document.getElementById("new-card")
+let btnRestart = document.getElementById("restart")
 
 let player = {
     name : "Rick",
@@ -61,12 +62,15 @@ function renderGame(){
     } else if (sum === 21) {
         message = "You've got Blackjack!"
         hasBlackjack = true
+
+        btnRestart.style.display = "inline-block"
     } else {
         message = "You're out of the game!"
         isAlive = false
 
         btnNewCard.style.backgroundColor = "#666"
         btnNewCard.style.color = "#444"
+        btnRestart.style.display = "inline-block"
     }
     
     messageEl.textContent = message
