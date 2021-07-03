@@ -8,6 +8,8 @@ let messageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
 let playerEl = document.getElementById("player-el")
+let btnStart = document.getElementById("start-game")
+let btnNewCard = document.getElementById("new-card")
 
 let player = {
     name : "Rick",
@@ -39,6 +41,11 @@ function startGame() {
 }
 
 function renderGame(){
+    // Hide startGame button
+    btnStart.style.display = "none"
+    // Show newCard button
+    btnNewCard.style.display = "inline-block"
+
     cardsEl.textContent = "Cards: "
 
     // Loop to render card that inside of array cards.
@@ -57,6 +64,9 @@ function renderGame(){
     } else {
         message = "You're out of the game!"
         isAlive = false
+
+        btnNewCard.style.backgroundColor = "#666"
+        btnNewCard.style.color = "#444"
     }
     
     messageEl.textContent = message

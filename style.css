@@ -45,6 +45,7 @@ small, .text_small {font-size: 0.8rem;}
 button {
     padding: 12px 24px;
     margin-top: 32px;
+    margin-bottom: 24px;
     border: none;
     border-radius: 16px;
     font-size: 18px;
@@ -62,4 +63,8 @@ button {
 
 #message-el {
     color: gold;
+}
+
+#new-card {
+  display: none;
 }
