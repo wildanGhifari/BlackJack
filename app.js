@@ -1,6 +1,7 @@
 // Variable Declaration
 let firstCard = 6
 let secondCard = 15
+let cards = [firstCard, secondCard]
 let sum = firstCard + secondCard
 let hasBlackjack = false
 let isAlive = true
@@ -15,7 +16,13 @@ function startGame() {
 }
 
 function renderGame(){
-    cardsEl.textContent = "Cards: " + firstCard + " " + secondCard
+    cardsEl.textContent = "Cards: "
+
+    // Get card inside array of cards.
+    for (let i = 0; i < cards.length; i++){
+        cardsEl.textContent += cards[i] + " "
+    }
+    
     sumEl.textContent = "Sum: " + sum
 
     // Set condition if sum less than 21 or exactly equal 21 or greater than 21.
@@ -34,6 +41,7 @@ function renderGame(){
 
 function newCard() {
     let card = 9
+    cards.push(card)
     sum += card
 
     renderGame()
